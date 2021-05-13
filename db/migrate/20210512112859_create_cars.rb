@@ -6,7 +6,7 @@ class CreateCars < ActiveRecord::Migration[6.0]
       t.integer  :manufacturer_id, null: false
       t.string  :grade, null: false
       t.integer :body_id, null: false
-      t.string :displacement, null: false
+      t.integer :displacement, null: false
       t.string :color, null: false
       t.integer :capacity, null: false
       t.integer :model_year, null: false
