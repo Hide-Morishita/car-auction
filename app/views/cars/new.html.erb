@@ -2,7 +2,7 @@
   <% if f.object.errors.any? %>
   <div class="error-alert">
     <ul>
-      <% model.errors.full_messages.each do |message| %>
+      <% f.object.errors.full_messages.each do |message| %>
       <li class='error-message'><%= message %></li>
       <% end %>
     </ul>
@@ -26,7 +26,7 @@
   <p>定員</p>
   <%= f.text_field :capacity %>
   <p>年式</p>
-  <%= f.text_field :capacity %>
+  <%= f.text_field :model_year %>
   <p>車両種別</p>
   <%= f.collection_select(:vehicle_type_id, VehicleType.all, :id, :name, {}, {}) %>
   <p>走行距離</p>

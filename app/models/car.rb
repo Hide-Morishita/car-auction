@@ -16,9 +16,9 @@ class Car < ApplicationRecord
   end
 
   with_options numericality: { other_than: 1 } do
-    vaildates :manufacturer_id
-    vaildates :body_id
-    vaildates :vehicle_type_id
+    validates :manufacturer_id
+    validates :body_id
+    validates :vehicle_type_id
   end
 
 end
