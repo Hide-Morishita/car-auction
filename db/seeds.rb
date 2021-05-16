@@ -15,7 +15,7 @@ Car.create!(
     },
     {
       name: "ヴェルファイア",
-      price: 130,
+      price: 350,
       manufacturer_id: 2,
       grade: "B",
       body_id: 3,
@@ -27,17 +27,17 @@ Car.create!(
       mileage: 10000
     },
     {
-      name: "ヴェルファイア",
-      price: 130,
-      manufacturer_id: 2,
-      grade: "B",
-      body_id: 3,
-      displacement: 2300,
-      color: "ホワイト",
-      capacity: 7,
-      model_year: 2016,
+      name: "ベンツ",
+      price: 400,
+      manufacturer_id: 10,
+      grade: "S",
+      body_id: 7,
+      displacement: 1900,
+      color: "シルバー",
+      capacity: 5,
+      model_year: 2019,
       vehicle_type_id: 3,
-      mileage: 10000
+      mileage: 15000
     }
   ]
 )

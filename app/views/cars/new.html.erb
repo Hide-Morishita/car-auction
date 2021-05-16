@@ -14,11 +14,11 @@
   <p>価格</p>
   <%= f.text_field :price %>
   <p>メーカー</p>
-  <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, {}, {}) %>
+  <%= f.collection_select(:manufacturer_id, Manufacturer.all, :id, :name, {include_blank: "---"}) %>
   <p>グレード</p>
   <%= f.text_field :grade %>
   <p>ボディ形状</p>
-  <%= f.collection_select(:body_id, Body.all, :id, :name, {}, {}) %>
+  <%= f.collection_select(:body_id, Body.all, :id, :name, {include_blank: "---"}) %>
   <p>排気量</p>
   <%= f.text_field :displacement %>
   <p>色</p>
@@ -28,7 +28,7 @@
   <p>年式</p>
   <%= f.text_field :model_year %>
   <p>車両種別</p>
-  <%= f.collection_select(:vehicle_type_id, VehicleType.all, :id, :name, {}, {}) %>
+  <%= f.collection_select(:vehicle_type_id, VehicleType.all, :id, :name, {include_blank: "---"}) %>
   <p>走行距離</p>
   <%= f.text_field :mileage %>
 

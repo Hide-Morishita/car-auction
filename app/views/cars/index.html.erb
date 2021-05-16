@@ -1,2 +1,28 @@
 <%= link_to "車両登録", new_car_path %>
 
+<%= search_form_for @q, url: search_cars_path do |f| %>
+  <%= f.label :manufacturer_id_eq, 'メーカー' %>
+  <br>
+  <%= f.collection_select :manufacturer_id_eq, Manufacturer.all, :id, :name, {include_blank: "すべてのメーカー"} %>
+  
+  <br>
+  <%= f.label :price_gteq, '価格'%>
+  <br>
+  <%= f.collection_select :price_gteq, Price.all, :price, :name, {include_blank: "下限なし"}%>
+  ～
+  <%= f.collection_select :price_lteq, Price.all, :price, :name, {include_blank: "上限なし"}%>
+  <br>
+  <%= f.label :model_year_gteq, '年式'%>
+  <br>
+  <%= f.date_select :model_year_gteq, start_year:Time.now.year, end_year:1981, discard_month:true, discard_day:true, prompt:"下限なし" %>
+  ～
+  <%= f.date_select :model_year_gteq, start_year:Time.now.year, end_year:1981, discard_month:true, discard_day:true, prompt:"上限なし" %>
+  <br>
+  <%= f.label :mileage_gteq, '走行距離'%>
+  <br>
+  <%= f.collection_select :mileage_gteq, Car.all, :mileage, :mileage, {include_blank: "下限なし"}%>
+  ～
+  <%= f.collection_select :mileage_lteq, Car.all, :mileage, :mileage, {include_blank: "上限なし"}%>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
