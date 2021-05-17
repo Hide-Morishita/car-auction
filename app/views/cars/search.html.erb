@@ -1,0 +1,15 @@
+<% @searches.each do |car| %>
+<div class="test">
+  <%= car.name %>
+  <%= car.price %>万円
+  <%= car.manufacturer.name %>
+  <%= car.grade %>
+  <%= car.body.name %>
+  <%= car.displacement %>cc
+  <%= car.color %>
+  <%= car.capacity %>人乗り
+  <%= car.model_year %>年式
+  <%= car.vehicle_type.name %>
+  <%= car.mileage %>km
+</div>
+<% end %>

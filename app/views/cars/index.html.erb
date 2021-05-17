@@ -14,15 +14,19 @@
   <br>
   <%= f.label :model_year_gteq, '年式'%>
   <br>
-  <%= f.date_select :model_year_gteq, start_year:Time.now.year, end_year:1981, discard_month:true, discard_day:true, prompt:"下限なし" %>
+  <%= f.text_field :model_year_gteq, placeholder: "下限なし" %>
   ～
-  <%= f.date_select :model_year_gteq, start_year:Time.now.year, end_year:1981, discard_month:true, discard_day:true, prompt:"上限なし" %>
+  <%= f.text_field :model_year_lteq, placeholder: "上限なし" %>
   <br>
   <%= f.label :mileage_gteq, '走行距離'%>
   <br>
-  <%= f.collection_select :mileage_gteq, Car.all, :mileage, :mileage, {include_blank: "下限なし"}%>
+  <%= f.collection_select :mileage_gteq, Mileage.all, :mileage, :name, {include_blank: "下限なし"}%>
   ～
-  <%= f.collection_select :mileage_lteq, Car.all, :mileage, :mileage, {include_blank: "上限なし"}%>
+  <%= f.collection_select :mileage_lteq, Mileage.all, :mileage, :name, {include_blank: "上限なし"}%>
+  <br>
+  <%= f.label :color_in, 'カラー'%>
+  <br>
+  <%= f.collection_check_boxes :color_in, Color.all, :color, :name, {}%>
   <br>
   <%= f.submit '検索' %>
 <% end %>

@@ -1,7 +1,9 @@
 class CarsController < ApplicationController
+  before_action :search_car, only: [:index, :search]
+
   def index
     @cars = Car.all
-    @q = Car.ransack(params[:q])
+    
   end
 
   def new
@@ -17,7 +19,6 @@ class CarsController < ApplicationController
   end
 
   def search
-    # @q = Car.ransack(params[:q])
     @searches = @q.result
   end
 
@@ -35,6 +36,10 @@ class CarsController < ApplicationController
                                 :model_year,
                                 :vehicle_type_id,
                                 :mileage)
+  end
+
+  def search_car
+    @q = Car.ransack(params[:q])
   end
 
 end
