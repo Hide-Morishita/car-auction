@@ -10,7 +10,7 @@ Car.create!(
       color: "黒",
       capacity: 5,
       model_year: 2018,
-      vehicle_type_id: 4,
+      vehicle_type_id: 1,
       mileage: 10000
     },
     {
