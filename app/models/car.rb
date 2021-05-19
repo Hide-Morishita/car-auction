@@ -15,10 +15,4 @@ class Car < ApplicationRecord
     validates :mileage
   end
 
-  with_options numericality: { other_than: 1 } do
-    validates :manufacturer_id
-    validates :body_id
-    validates :vehicle_type_id
-  end
-
 end
