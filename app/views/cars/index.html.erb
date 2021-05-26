@@ -3,7 +3,8 @@
 <%= search_form_for @q, url: search_cars_path do |f| %>
   <%= f.label :manufacturer_id_eq, 'メーカー' %>
   <br>
-  <%= f.collection_select :manufacturer_id_eq, Manufacturer.all, :id, :name, {include_blank: "すべてのメーカー"} %>
+  <%= f.collection_select :manufacturer_id_eq, Manufacturer.all, :id, :name, {include_blank: "すべてのメーカー"}, {id: "car-select"} %>
+  <%= f.collection_select :name_eq, [], :name, :name, {include_blank: "すべての車種"}, {id: "car-name"} %>
   
   <br>
   <%= f.label :price_gteq, '価格'%>

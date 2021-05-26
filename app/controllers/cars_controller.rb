@@ -3,7 +3,12 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
-    
+
+    if params[:car_name] != nil
+      car_select = Car.where(manufacturer_id: params[:car_name])
+      
+      render json: {name: car_select}
+    end
   end
 
   def new
