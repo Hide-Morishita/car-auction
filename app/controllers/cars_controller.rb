@@ -2,8 +2,6 @@ class CarsController < ApplicationController
   before_action :search_car, only: [:index, :search]
 
   def index
-    @cars = Car.all
-
     if params[:car_name] != nil
       car_select = Car.where(manufacturer_id: params[:car_name])
       
