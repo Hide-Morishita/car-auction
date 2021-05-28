@@ -31,3 +31,16 @@
   <br>
   <%= f.submit '検索' %>
 <% end %>
+
+<ul>
+  <li><%= link_to "〜10万円", search_cars_path(q: {price_lteq: 10}) %></li>
+  <li><%= link_to "〜30万円", search_cars_path(q: {price_lteq: 30}) %></li>
+  <li><%= link_to "〜50万円", search_cars_path(q: {price_lteq: 50}) %></li>
+  <li><%= link_to "〜70万円", search_cars_path(q: {price_lteq: 70}) %></li>
+  <li><%= link_to "〜100万円", search_cars_path(q: {price_lteq: 100}) %></li>
+  <li><%= link_to "〜150万円", search_cars_path(q: {price_lteq: 150}) %></li>
+  <li><%= link_to "〜200万円", search_cars_path(q: {price_lteq: 200}) %></li>
+  <li><%= link_to "〜250万円", search_cars_path(q: {price_lteq: 250}) %></li>
+  <li><%= link_to "〜300万円", search_cars_path(q: {price_lteq: 300}) %></li>
+  <li><%= link_to "300万円以上", search_cars_path(q: {price_gteq: 300}) %></li>
+</ul>
