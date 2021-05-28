@@ -1,3 +1,35 @@
+<%= search_form_for @q, url: search_cars_path do |f| %>
+  <%= f.label :manufacturer_id_eq, 'メーカー' %>
+  <br>
+  <%= f.collection_select :manufacturer_id_eq, Manufacturer.all, :id, :name, {include_blank: "すべてのメーカー"}, {id: "car-select"} %>
+  <%= f.collection_select :name_eq, [], :name, :name, {include_blank: "すべての車種"}, {id: "car-name"} %>
+  <%# 絞り込み検索をするさいにグレードも検索できるようにする %>
+  <br>
+  <%= f.label :price_gteq, '価格'%>
+  <br>
+  <%= f.collection_select :price_gteq, Price.all, :price, :name, {include_blank: "下限なし"}%>
+  ～
+  <%= f.collection_select :price_lteq, Price.all, :price, :name, {include_blank: "上限なし"}%>
+  <br>
+  <%= f.label :model_year_gteq, '年式'%>
+  <br>
+  <%= f.text_field :model_year_gteq, placeholder: "下限なし" %>
+  ～
+  <%= f.text_field :model_year_lteq, placeholder: "上限なし" %>
+  <br>
+  <%= f.label :mileage_gteq, '走行距離'%>
+  <br>
+  <%= f.collection_select :mileage_gteq, Mileage.all, :mileage, :name, {include_blank: "下限なし"}%>
+  ～
+  <%= f.collection_select :mileage_lteq, Mileage.all, :mileage, :name, {include_blank: "上限なし"}%>
+  <br>
+  <%= f.label :color_in, 'カラー'%>
+  <br>
+  <%= f.collection_check_boxes :color_in, Color.all, :color, :name, {}%>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
 <% if @searches.present? %>
   <% @searches.each do |car| %>
     <div class="test">
@@ -19,3 +51,5 @@
 <% end %>
 
 <%= link_to "トップページに戻る", root_path %>
+
+
