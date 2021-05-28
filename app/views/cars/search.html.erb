@@ -31,7 +31,11 @@
 <% end %>
 
 <% if @searches.present? %>
+<div class="search-hit">
+  <%= "#{@searches.length}件見つかりました。" %>
+</div>
   <% @searches.each do |car| %>
+  <div class="search-view">
     <div class="test">
       <%= car.name %>
       <%= car.price %>万円
@@ -45,9 +49,10 @@
       <%= car.vehicle_type.name %>
       <%= car.mileage %>km
     </div>
+  </div>
   <% end %>
 <% else %>
-  <p>検索にヒットする車両はありませんでした</p>
+  <div class="search-hit not-hit">検索結果が見つかりませんでした</div>
 <% end %>
 
 <%= link_to "トップページに戻る", root_path %>

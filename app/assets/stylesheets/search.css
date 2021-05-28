@@ -1,0 +1,21 @@
+.test{
+  margin: 20px 0;
+}
+
+.search-hit{
+  border-bottom: 2px solid black;
+  width: 30%;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.not-hit{
+  font-size: 20px;
+}
+
+.search-view{
+  margin: 10px 0;
+  border: 1px solid red;
+}
